@@ -1,12 +1,13 @@
-Get properties info
-GET /properties/:id
-Path Parameters:
+## CRUD OPERATIONS
 
-id properties id
-Success Status Code: 200
+#### GET
 
-Returns: JSON
+#### GET: `/properties/:id`
 
+
+#### Get data from db, need id.
+
+```
 {
   _id: Number,
   description: String,
@@ -22,6 +23,7 @@ Returns: JSON
     kitchen: { imageURL: String, description: String}
   }
 }
+```
 
 Add properties
 POST /properties/:id
