@@ -1,12 +1,8 @@
 ## CRUD OPERATIONS
 
-#### GET
-
-#### GET: `/properties/:id`
-
-
-#### Get data from db, need id.
-
+###### GET: `/properties/:id`
+###### Success: Return status 200
+###### Get data from db, need id.
 ```
 {
   _id: Number,
@@ -25,12 +21,10 @@
 }
 ```
 
-Add properties
-POST /properties/:id
-Success Status Code: 201
-
-Request Body: Expects JSON with the following keys.
-
+###### POST: `/properties/:id`
+###### Success: Return status 201
+###### Expects Json input in the following format:
+```
 {
   _id: Number,
   description: String,
@@ -46,16 +40,12 @@ Request Body: Expects JSON with the following keys.
     kitchen: { imageURL: String, description: String}
   }
 }
+```
 
-Update properties info
-PATCH /properties/:id
-Path Parameters:
-
-id properties id
-Success Status Code: 204
-
-Request Body: Expects JSON with any of the following keys (include only keys to be updated)
-
+###### PATCH: `/properties/:id`
+###### Success: Return status 204
+###### Edit information from db. Expects following key/value pair:
+```
 {
   _id: Number,
   description: String,
@@ -71,10 +61,8 @@ Request Body: Expects JSON with any of the following keys (include only keys to 
     kitchen: { imageURL: String, description: String}
   }
 }
+```
 
-Delete properties
-DELETE /properties/:id
-Path Parameters:
-
-id properties id
-Success Status Code: 204
+###### DELETE: `/properties/:id`
+###### Success: Return status 204
+###### Removes all data with the same id
