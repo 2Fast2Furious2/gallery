@@ -9,14 +9,14 @@
   description: String,
   starRating: Number,
   reviewTotal: Number,
-  superhost: boolean,
+  superhost: Boolean,
   location: String,
   images: {
     bedrooms: Array,
     bathrooms: Array,
-    house: { imageURL: String, description: String},
-    backyard: { imageURL: String, description: String},
-    kitchen: { imageURL: String, description: String}
+    house: { imageURL: String, description: String },
+    backyard: { imageURL: String, description: String },
+    kitchen: { imageURL: String, description: String }
   }
 }
 ```
@@ -30,14 +30,14 @@
   description: String,
   starRating: Number,
   reviewTotal: Number,
-  superhost: boolean,
+  superhost: Boolean,
   location: String,
   images: {
     bedrooms: Array,
     bathrooms: Array,
-    house: { imageURL: String, description: String},
-    backyard: { imageURL: String, description: String},
-    kitchen: { imageURL: String, description: String}
+    house: { imageURL: String, description: String },
+    backyard: { imageURL: String, description: String },
+    kitchen: { imageURL: String, description: String }
   }
 }
 ```
@@ -51,14 +51,14 @@
   description: String,
   starRating: Number,
   reviewTotal: Number,
-  superhost: boolean,
+  superhost: Boolean,
   location: String,
   images: {
     bedrooms: Array,
     bathrooms: Array,
-    house: { imageURL: String, description: String},
-    backyard: { imageURL: String, description: String},
-    kitchen: { imageURL: String, description: String}
+    house: { imageURL: String, description: String },
+    backyard: { imageURL: String, description: String },
+    kitchen: { imageURL: String, description: String }
   }
 }
 ```
