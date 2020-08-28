@@ -10,18 +10,12 @@
   starRating: Number,
   reviewTotal: Number,
   superhost: Boolean,
-  location: String,
-  images: {
-    bedrooms: Array,
-    bathrooms: Array,
-    house: { imageURL: String, description: String },
-    backyard: { imageURL: String, description: String },
-    kitchen: { imageURL: String, description: String }
-  }
+  location: String
 }
+
 ```
 
-###### POST: `/properties/:id`
+###### POST: `/properties/`
 ###### Success: Return status 201
 ###### Expects Json input in the following format:
 ```
@@ -31,14 +25,7 @@
   starRating: Number,
   reviewTotal: Number,
   superhost: Boolean,
-  location: String,
-  images: {
-    bedrooms: Array,
-    bathrooms: Array,
-    house: { imageURL: String, description: String },
-    backyard: { imageURL: String, description: String },
-    kitchen: { imageURL: String, description: String }
-  }
+  location: String
 }
 ```
 
@@ -52,17 +39,34 @@
   starRating: Number,
   reviewTotal: Number,
   superhost: Boolean,
-  location: String,
-  images: {
-    bedrooms: Array,
-    bathrooms: Array,
-    house: { imageURL: String, description: String },
-    backyard: { imageURL: String, description: String },
-    kitchen: { imageURL: String, description: String }
-  }
+  location: String
 }
 ```
 
 ###### DELETE: `/properties/:id`
 ###### Success: Return status 204
 ###### Removes all data with the same id
+
+
+
+###### GET: `/properties/:id/images`
+###### Success: Return status 200
+###### Get certain image, need id.
+```
+{
+  id SERIAL PRIMARY KEY,
+  propertiesId INTEGER,
+  imageUrl VARCHAR(255)
+};
+```
+
+###### POST: `/properties/:id/images`
+###### Success: Return status 201
+###### Expects Json input in the following format:
+```
+{
+  id SERIAL PRIMARY KEY,
+  propertiesId INTEGER,
+  imageUrl VARCHAR(255)
+};
+```
