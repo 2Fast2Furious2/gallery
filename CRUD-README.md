@@ -5,68 +5,78 @@
 ###### Get data from db, need id.
 ```
 {
-  _id: Number,
-  description: String,
-  starRating: Number,
-  reviewTotal: Number,
-  superhost: Boolean,
-  location: String
+  "_id": "Number",
+  "description": "String",
+  "starRating": "Number",
+  "reviewTotal": "Number",
+  "superhost": "Boolean",
+  "location": "String",
+  "images": [{
+    "imageID": "Number",
+    "imageURL": "String",
+  }]
 }
 
 ```
 
-###### POST: `/properties/`
+###### POST: `/properties`
 ###### Success: Return status 201
 ###### Expects Json input in the following format:
 ```
 {
-  _id: Number,
-  description: String,
-  starRating: Number,
-  reviewTotal: Number,
-  superhost: Boolean,
-  location: String
+  "_id": "Number",
+  "description": "String",
+  "starRating": "Number",
+  "reviewTotal": "Number",
+  "superhost": "Boolean",
+  "location": "String",
+  "images": [{
+    "imageId": "Number",
+    "imageUrl": "String",
+  }]
 }
 ```
 
 ###### PATCH: `/properties/:id`
 ###### Success: Return status 204
-###### Edit information from db. Expects following key/value pair:
+###### Edit information from db. Put only keys you want replaced. Expects following key/value pair:
 ```
 {
-  _id: Number,
-  description: String,
-  starRating: Number,
-  reviewTotal: Number,
-  superhost: Boolean,
-  location: String
+  "_id": "Number",
+  "description": "String",
+  "starRating": "Number",
+  "reviewTotal": "Number",
+  "superhost": "Boolean",
+  "location": "String",
+  "images": [{
+    "imageId": "Number",
+    "imageUrl": "String",
+  }]
 }
 ```
 
-###### DELETE: `/properties/:id`
+###### DELETE: `/properties/:id/images/:imageId`
 ###### Success: Return status 204
-###### Removes all data with the same id
+###### Delete a specific image in a property
 
 
-
-###### GET: `/properties/:id/images`
-###### Success: Return status 200
-###### Get certain image, need id.
-```
-{
-  id SERIAL PRIMARY KEY,
-  propertiesId INTEGER,
-  imageUrl VARCHAR(255)
-};
-```
-
-###### POST: `/properties/:id/images`
+###### POST: `/properties/:id/photos`
 ###### Success: Return status 201
-###### Expects Json input in the following format:
+###### Add Photo to a property
+
 ```
 {
-  id SERIAL PRIMARY KEY,
-  propertiesId INTEGER,
-  imageUrl VARCHAR(255)
-};
+  "imageId": "String",
+  "imageUrl": "String"
+}
+```
+
+###### PATCH: `/properties/:id/images/:imageId`
+###### Success: Return status 204
+###### Updates an image in a property.
+```
+{
+  "imageId": "String",
+  "imageUrl": "String"
+}
 ```
