@@ -7,7 +7,7 @@ import ScrollButton from './Modal/ScrollButton.jsx';
 
 import styles from './Modal.scss';
 
-export default ({ showAllImages, allImages, shareHandler, currentPic }) => {
+export default ({ showAllImages, allImages, shareHandler }) => { // REMOVED CURRENTPIC NOT BEING USED
   const [currentImage, setCurrentImage] = useState(allImages);
   const [currentImageNum, setCurrentImageNum] = useState(0);
 
@@ -23,6 +23,10 @@ export default ({ showAllImages, allImages, shareHandler, currentPic }) => {
     }
   };
 
+  // debugger;
+  console.log(currentImage)
+  console.log(currentImage[currentImageNum].image_url)
+
   return (
     <div className={styles.modal}>
       <div className={styles.header}>
@@ -36,13 +40,13 @@ export default ({ showAllImages, allImages, shareHandler, currentPic }) => {
       <div className={styles.display}>
         {currentImageNum === 0 ? <p className={styles.fake}></p> : <ScrollButton direction="left" scrollHandler={scrollHandler} />}
         <div className={styles.imgContainer}>
-          <img src={currentImage[currentImageNum].imageURL} className={styles.img} height='510'></img>
+          <img src={currentImage[currentImageNum].image_url} className={styles.img} height='510'></img>
         </div>
         {currentImageNum === allImages.length - 1 ? <p className={styles.fake}></p> : <ScrollButton direction="right" scrollHandler={scrollHandler} />}
-      </div >
+      </div>
       <div className={styles.other}>
       </div>
-    </div >
+    </div>
   )
 };
 
