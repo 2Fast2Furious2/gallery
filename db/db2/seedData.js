@@ -103,7 +103,7 @@ const seedData = (writer, min, max, cb) => {
 
 let writeStream = fs.createWriteStream("../csvsIgnore/mongoData3.json");
 
-seedData(writeStream, 1, 10, ()=> {
+seedData(writeStream, 1, 10000000, ()=> {
   console.log("finished seeding")
 });
 
