@@ -8,6 +8,8 @@
     "test": "jest",
     "start": "webpack -d --watch",
     "server": "nodemon ./server/index.js",
+    "postgres": "nodemon ./sdcserver/PGindex.js",
+    "mongo": "nodemon ./sdcserver/MONGOindex.js",
     "seed": "./db/seed.js"
   },
   "repository": {
@@ -43,10 +45,13 @@
   "dependencies": {
     "axios": "^0.19.2",
     "body-parser": "^1.19.0",
+    "csv-write-stream": "^2.0.0",
     "express": "^4.17.1",
     "mongoose": "^5.9.27",
+    "newrelic": "^6.13.0",
     "node-sass": "^4.14.1",
     "nodemon": "^2.0.4",
+    "pg": "^8.3.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

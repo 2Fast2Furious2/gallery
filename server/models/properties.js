@@ -1,8 +1,8 @@
-let { Property } = require("../../db/models/Property");
+let property = require("../../db/models/sdcProperty");
 
 //GET
-const getProperties = (_id, callback) => {
-  Property.find({ _id: _id }, (err, document) => {
+const getProperties = (id, callback) => {
+  property.Property.find({ id: `${id}` }, (err, document) => { //changed args id   from _id
     if (err) {
       console.log("err", err);
     } else {

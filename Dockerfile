@@ -10,6 +10,5 @@ RUN npm install
 
 EXPOSE 3001
 
-CMD [ "npm", "run", "seed" ]
+CMD [ "npm", "run"]
 
-CMD [ "npm", "run", "blah" ]
