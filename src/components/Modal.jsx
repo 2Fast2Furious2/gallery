@@ -23,10 +23,6 @@ export default ({ showAllImages, allImages, shareHandler }) => { // REMOVED CURR
     }
   };
 
-  // debugger;
-  console.log(currentImage)
-  console.log(currentImage[currentImageNum].image_url)
-
   return (
     <div className={styles.modal}>
       <div className={styles.header}>

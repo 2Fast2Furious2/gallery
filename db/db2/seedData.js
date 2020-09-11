@@ -63,7 +63,7 @@ const seedData = (writer, min, max, cb) => {
       let location = cities[min % cities.length];
 
       const properties = {
-        id: `${id}`,
+        id: min,
         description: `${description}`,
         rating: `${rating}`,
         reviews: `${reviews}`,
@@ -77,7 +77,7 @@ const seedData = (writer, min, max, cb) => {
           let imageDescription = `${word1[shuffle(1, 18)]} and ${word2[shuffle(1, 30)]} ${word3[shuffle(1, 8)]}`
 
           let image = {
-            id: `${i}`,
+            id: i,
             image_url: `${imageUrl}`,
             image_description: `${imageDescription}`
           }
@@ -101,7 +101,7 @@ const seedData = (writer, min, max, cb) => {
   writeFile();
 };
 
-let writeStream = fs.createWriteStream("../csvsIgnore/mongoData3.json");
+let writeStream = fs.createWriteStream("./mongoData.json");
 
 seedData(writeStream, 1, 10000000, ()=> {
   console.log("finished seeding")
@@ -109,4 +109,15 @@ seedData(writeStream, 1, 10000000, ()=> {
 
 // /Users/mainfolder/Desktop/SystemDesignCapstone/gallery/db/csvsIgnore/mongoData.csv (FILEPATH)
 // mongoimport --type csv -d gallery -c properties --headerline --drop /Users/mainfolder/Desktop/SystemDesignCapstone/gallery/db/csvsIgnore/mongoData.csv (IMPORT CSV)
-// mongoimport --db gallery --collection properties --type json --file /Users/mainfolder/Desktop/SystemDesignCapstone/gallery/db/csvsIgnore/mongoData.json (IMPORT JSON)
+// mongoimport --db gallery --collection properties --type json --file /Users/mainfolder/Desktop/SystemDesignCapstone/gallery/db/db2/mongoData.json (IMPORT JSON)
+
+// /home/ec2-user/nimaester/gallery/db/csvsIgnore.mongoData3.json
+
+// mongoimport --db gallery --collection properties --type json --file ./mongoData3.json
+
+
+// db.createUser({
+//   user: "root",
+//   pwd: "root",
+//   roles: [{ role: "readWrite", db: "gallery" }],
+// });
