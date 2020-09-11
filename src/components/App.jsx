@@ -26,38 +26,14 @@ export default () => {
   const [isShowingShareModal, setShowingShareModal] = useState(false);
   const [shareModal, setShareModal] = useState(styles.hideShareModal);
 
-  // // POSTGRES
-  // useEffect(() => {
-  //   let id = window.location.pathname.split("/")[2];
-  //   axios
-  //     .get(`/properties/${id}/images`)
-  //     .then((images) => {
-  //       setAllImages(images.data.rows);
-  //       console.log(images.data.rows);
-  //     })
-  //   axios
-  //     .get(`/properties/${id}`)
-  //     .then((house) => {
-  //       console.log(house.data.rows[0]);
-  //       let houseInfo = house.data.rows[0];
-  //       setSuperhost(houseInfo.superhost);
-  //       setHome(houseInfo);
-  //     })
-  //     const timer = setTimeout(() => {
-  //      setLoading(false);
-  //    }, 2000);
-  //     return () => clearTimeout(timer)
-  //     .catch(console.log);
-  // }, []);
 
-  //MONGO
    useEffect(() => {
      let id = window.location.pathname.split("/")[2];
      axios.get(`/properties/${id}/images`).then((images) => {
        setAllImages(images.data);
      });
      axios.get(`/properties/${id}`).then((house) => {
-       let houseInfo = house.data[0];
+       let houseInfo = house.data;
        setSuperhost(houseInfo.superhost);
        setHome(houseInfo);
      });
